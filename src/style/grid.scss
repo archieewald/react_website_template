@@ -1,0 +1,53 @@
+/*Grid - w pliku*/
+$gap: 3px;
+$columns: 12;
+$breakPoint-ms: 240px;
+$breakPoint-ml: 320px;
+$breakPoint-ts: 480px;
+$breakPoint-tl: 768px;
+$breakPoint-cs: 1024px;
+
+.container {
+  padding-left: $gap;
+  padding-right: $gap;
+
+  .row {
+    margin-right: -$gap;
+    margin-left: -$gap;
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  
+  @for $i from 1 through $columns {
+    .col-#{$i}-#{$columns} {
+      box-sizing: border-box;
+      padding-left: $gap;
+      padding-right: $gap;
+      margin-bottom: 2*$gap;
+
+      @media (max-width: $breakPoint-ms) {
+        width: ((100/$columns)*$i)*1%;
+        float: left;
+      }
+      @media (max-width: $breakPoint-ml) {
+        width: ((100/$columns)*$i)*1%;
+        float: left;
+      }
+      @media (max-width: $breakPoint-ts) {
+        width: ((100/$columns)*$i)*1%;
+        float: left;
+      }
+      @media (max-width: $breakPoint-tl) {
+        width: ((100/$columns)*$i)*1%;
+        float: left;
+      }
+      @media (min-width: $breakPoint-cs) {
+        width: ((100/$columns)*$i)*1%;
+        float: left;
+      }
+    }
+  }
+}

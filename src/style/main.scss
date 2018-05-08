@@ -1,0 +1,12 @@
+.carousel{
+  position: relative;
+  .carousel_indicator{
+  position: absolute;
+    top: 25px;
+    left: 10px;
+    z-index: 1;
+  }
+}
+.biggie{
+  height: 240px;
+}

@@ -1,0 +1,152 @@
+
+.navigation{
+  width: 100%;
+  height: 80px;
+  background: rgba(white, 0.6);
+
+
+  img{
+    height: 100%;
+    width: auto;
+    float: left;
+  }
+  nav{
+    height: 100%;
+    margin:0;
+    padding:0;
+    list-style:none;
+    float: right;
+    position: relative;
+    .header_navigation{
+      list-style:none;
+      padding:0;
+      margin: 0;
+      height: 100%;
+      li{
+        height: 100%;
+        display: inline-block;
+        width: 90px;
+        padding: auto 5px;
+        border-left: 1px solid #e4e4e4;
+        &:hover {
+          background: black;
+        }
+        .active{
+          color: white;
+          background: black;
+        }
+        a{
+          height: 100%;
+          display: block;
+          text-align: center;
+          position: relative;
+          line-height: 80px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 1em;
+          color: black;
+          &:hover{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button_nav{
+  display: none;
+  background: rgba(white, 0.6);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3, .bar4 {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar2 {
+  -webkit-transform: rotate(-45deg) translate(-3px, 3px);
+  transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.change .bar1,
+.change .bar4{opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-3px, -3px);
+  transform: rotate(45deg) translate(-3px, -3px);
+}
+
+@media only screen and (max-width: 760px) {
+
+  .button_nav{
+    display: inline-block;
+    float: right;
+    margin: 19px 10px;
+
+  }
+  .navigation{
+    nav {
+      z-index: 1;
+      background: black;
+      float: none;
+      width: 50%;
+      position: absolute;
+      left: 0;
+      top: 80px;
+      height: auto;
+      .header_navigation {
+        display: none;
+        opacity: 0;
+      }
+      .header_navigation.responsive {
+        display: table;
+        width: 100%;
+        opacity: 0;
+        animation: opacityHandler 1s forwards;
+        li {
+          display: list-item;
+          height: 60px;
+          width: 100%;
+          border-bottom: 1px solid rgba(#e4e4e4, 0.6);
+          &:last-child{
+            border: none;
+          }
+          border-left: none;
+          &:hover {
+            background: white;
+          }
+          .active{
+            color: black;
+            background: white;
+          }
+          a{
+            line-height: 60px;
+            color: white;
+            &:hover{
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sticky{
+  position: fixed;
+}
+
+@keyframes opacityHandler {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
