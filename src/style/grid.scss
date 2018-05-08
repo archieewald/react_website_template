@@ -29,19 +29,19 @@ $breakPoint-cs: 1024px;
       margin-bottom: 2*$gap;
 
       @media (max-width: $breakPoint-ms) {
-        width: ((100/$columns)*$i)*1%;
+        width: ((100/$columns)*$i)*2%;
         float: left;
       }
       @media (max-width: $breakPoint-ml) {
-        width: ((100/$columns)*$i)*1%;
+        width: ((100/$columns)*$i)*2%;
         float: left;
       }
       @media (max-width: $breakPoint-ts) {
-        width: ((100/$columns)*$i)*1%;
+        width: ((100/$columns)*$i)*2%;
         float: left;
       }
       @media (max-width: $breakPoint-tl) {
-        width: ((100/$columns)*$i)*1%;
+        width: ((100/$columns)*$i)*2%;
         float: left;
       }
       @media (min-width: $breakPoint-cs) {

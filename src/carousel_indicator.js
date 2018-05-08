@@ -8,9 +8,9 @@ const Container = styled.div`
 `;
 
 const Pip = styled.span`
-  background: ${(props) => (props.isCurrent) ? 'darkgrey' : 'gainsboro'};
-  width: 15px;
-  height: 15px;
+  background: ${(props) => (props.isCurrent) ? 'rgb(255,255,255, 1)' : 'rgb(128,128,128, 0.7)'};
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   margin-right: 10px;
   display: inline-block;

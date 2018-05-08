@@ -1,12 +1,65 @@
+.main{
+  background-image: url("../images/wheele.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
 .carousel{
   position: relative;
+  height: 100%;
+  .swipe_wrapper{
+    height: 100%;
+  }
   .carousel_indicator{
   position: absolute;
-    top: 25px;
-    left: 10px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
   }
 }
-.biggie{
-  height: 240px;
+
+.whole_height{
+  height: 100vh;
+  .car-1{
+    background: url("../images/corvette.jpg");
+    background-position: -100px;
+    background-size: cover;
+  }
+  .car-2{
+    background: url("../images/alfa.jpg");
+    background-position: -150px;
+    background-size: cover;
+  }
+  .car-3{
+    background: url("../images/type-e.jpg");
+    background-position: -450px;
+    background-size: 250%;
+  }
+  .car-1,
+  .car-2,
+  .car-3{
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+}
+.half_height{
+  height: 50vh;
+  .boat-1{
+    background: url("../images/boat.jpg");
+    background-position: -100px;
+    background-size: cover;
+  }
+  .boat-2{
+    background: url("../images/boat-2.jpg");
+    background-position: -150px;
+    background-size: cover;
+  }
+  .boat-1,
+  .boat-2{
+    height: 100%;
+    background-repeat: no-repeat;
+  }
 }

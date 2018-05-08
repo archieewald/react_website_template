@@ -4,6 +4,7 @@ const CarouselSlot = styled.div`
   flex: 1 0 100%;
   flex-basis: 100%;
   margin: 0 20px;
+  height: 100%;
   order: ${(props) => props.order};
   opacity: ${(props) => {
     if (props.numSlides === 1) return 1;

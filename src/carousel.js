@@ -20,6 +20,7 @@ export default class Carousel extends Component {
         this.nextSlide = this.nextSlide.bind(this);
     }
     componentDidMount(){
+        const slidingTime = this.props.slideTime;
         let intervalId = setInterval(() => {
             const position = this.state.position;
             const { children } = this.props;
@@ -32,7 +33,7 @@ export default class Carousel extends Component {
             });
             this.getOrder(newPosition);
             this.doSliding('next', newPosition);
-        }, 5000);
+        }, (slidingTime * 1000));
     };
     getOrder(itemIndex) {
         const { position } = this.state;
@@ -96,7 +97,7 @@ export default class Carousel extends Component {
         }
     };
     render() {
-        const TitleSection = styled.div`
+        const IndicatorD = styled.div`
         margin:0;
         `;
         const { children } = this.props;
@@ -109,7 +110,7 @@ export default class Carousel extends Component {
         );
         return (
             <div className="carousel">
-                <TitleSection>
+                <IndicatorD>
                     { childrenWithProps.length > 1 &&
                     (<Indicator
                         length={ childrenWithProps.length }
@@ -117,8 +118,8 @@ export default class Carousel extends Component {
                         changePosition={this.changePosition}
                     />)
                     }
-                </TitleSection>
-                <Swipeable
+                </IndicatorD>
+                <Swipeable className="swipe_wrapper"
                     onSwipingLeft={ () => this.handleSwipe(true) }
                     onSwipingRight={ () => this.handleSwipe() }
                 >
