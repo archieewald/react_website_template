@@ -1,65 +1,93 @@
+@import "./fonts.scss";
+
 .main{
-  background-image: url("../images/wheele.jpg");
+  background: url("../images/wheele.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
-}
-.carousel{
-  position: relative;
-  height: 100%;
-  .swipe_wrapper{
+  padding: 0;
+  .main_layer{
+    background: rgba(black, 0.4);
+  }
+  .letter_box{
+    padding: 30vh 0;
+    h1{
+      margin: 0;
+      text-align: center;
+      font-size: 5rem;
+      text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(0,0,0,.6);
+      color: white;
+      font-family: 'Tinos', serif;
+      letter-spacing: 0.4px;
+    }
+  }
+  .carousel_container{
+    width: 95%;
+    margin: auto;
+  }
+  .carousel{
+    position: relative;
     height: 100%;
+    .swipe_wrapper{
+      height: 100%;
+    }
+    .carousel_indicator{
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
   }
-  .carousel_indicator{
-  position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
+
 }
 
+
 .whole_height{
-  height: 100vh;
+  height: 70vw;
   .car-1{
-    background: url("../images/corvette.jpg");
-    background-position: -100px;
-    background-size: cover;
+    background-image: url("../images/corvette.jpg");
   }
   .car-2{
-    background: url("../images/alfa.jpg");
-    background-position: -150px;
-    background-size: cover;
+    background-image: url("../images/alfa.jpg");
   }
   .car-3{
-    background: url("../images/type-e.jpg");
-    background-position: -450px;
-    background-size: 250%;
+    background-image: url("../images/type-e.jpg");
   }
   .car-1,
   .car-2,
   .car-3{
     height: 100%;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.5);
   }
 }
 .half_height{
-  height: 50vh;
+  height: 34vw;
   .boat-1{
-    background: url("../images/boat.jpg");
-    background-position: -100px;
-    background-size: cover;
+    background-image: url("../images/boat.jpg");
   }
   .boat-2{
-    background: url("../images/boat-2.jpg");
-    background-position: -150px;
-    background-size: cover;
+    background-image: url("../images/boat-2.jpg");
   }
   .boat-1,
   .boat-2{
     height: 100%;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.5);
+  }
+  .moto-1{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.5);
+    background-image: url("../images/harley.jpg");
   }
 }

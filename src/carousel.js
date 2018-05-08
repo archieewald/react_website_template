@@ -21,18 +21,21 @@ export default class Carousel extends Component {
     }
     componentDidMount(){
         const slidingTime = this.props.slideTime;
-        let intervalId = setInterval(() => {
+        this.intervalId = setInterval(() => {
             const position = this.state.position;
             const { children } = this.props;
             const numItems = children.length || 1;
-
             let newPosition = position + 1 === numItems ? 0 : position + 1;
 
             this.setState({
                 position: newPosition,
             });
             this.getOrder(newPosition);
-            this.doSliding('next', newPosition);
+            if(numItems === 2 && position + 1 === numItems){
+                this.doSliding('prev', newPosition);
+            } else if(numItems === 1) {
+                clearInterval(this.intervalId);
+            }else this.doSliding('next', newPosition);
         }, (slidingTime * 1000));
     };
     getOrder(itemIndex) {
