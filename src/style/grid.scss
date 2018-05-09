@@ -1,4 +1,4 @@
-/*Grid - w pliku*/
+/*Grid */
 $gap: 10px;
 $columns: 12;
 $breakPoint-ms: 240px;
@@ -8,8 +8,8 @@ $breakPoint-tl: 768px;
 $breakPoint-cs: 1024px;
 
 .container {
-  padding-left: $gap;
-  padding-right: $gap;
+  //padding-left: $gap;
+  //padding-right: $gap;
 
   .row {
     margin-right: -$gap;

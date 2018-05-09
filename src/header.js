@@ -34,14 +34,14 @@ export default class Header extends React.Component{
 
         let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
 
-        if(scrollTop >= sticky.offsetHeight ){
+        if(scrollTop >= sticky.offsetHeight-79 ){
             sticky.classList.add('sticky');
         } else sticky.classList.remove('sticky');
 
     };
     render(){
         return(
-            <div id='navigation' ref='navigation' className="navigation row">
+            <div id='navigation' ref='navigation' className="navigation">
                 <img alt='logo' src={require('./images/logo.png')} />
                 <button id="navButton" ref="navButton" className="button_nav" onClick={this.toggleMenu}>
                     <div className="bar1"></div>

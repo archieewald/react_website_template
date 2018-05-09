@@ -2,14 +2,17 @@
   background: rgba(black, 0.8);
   color: #999;
   .row{
+    /*Rights column settings*/
     .rights{
       height: 100%;
       h4{
+        margin-left: 10px;
         text-align: left;
         font-size: 0.8em;
         font-weight: 300;
       }
     }
+    /*Departments list settings*/
     .departments{
       ul{
         list-style: none;
@@ -28,6 +31,7 @@
         }
       }
     }
+    /*Social list settings*/
     .social{
       padding: auto;
       ul{
@@ -45,6 +49,7 @@
               opacity: 0.7;
             }
           }
+          /*Social icons paths*/
           .facebook{
             background-image: url("../icons/facebook.png");
           }
@@ -58,5 +63,36 @@
       }
     }
   }
-
+}
+/*RWD*/
+@media (max-width: 760px) {
+  .footer{
+    .row{
+      /*Rights column settings*/
+      .rights{
+        width: 100%;
+        h4{
+          font-size: 0.8em;
+        }
+      }
+      /*Departments list settings*/
+      .departments{
+        width: 100%;
+        ul{
+          margin: 0;
+        }
+      }
+      /*Social list settings*/
+      .social{
+        padding: auto;
+        width: 100%;
+        ul{
+          li {
+            display: inline-block;
+            margin: 20px 10px;
+          }
+        }
+      }
+    }
+  }
 }

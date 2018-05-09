@@ -9,8 +9,9 @@
   position: relative;
   padding: 0;
   .main_layer{
-    background: rgba(black, 0.4);
+    background: rgba(black, 0.5);
   }
+  /* Section One - opening sentence*/
   .letter_box{
     padding: 30vh 0;
     h1{
@@ -23,6 +24,7 @@
       letter-spacing: 0.4px;
     }
   }
+  /*General settings & images settings*/
   .carousel_container{
     width: 95%;
     margin: auto;
@@ -36,7 +38,111 @@
     .blurred{
       filter: blur(3px) brightness(80%);
     }
+    .slide{
+      position: relative;
+      height: 100%;
+      .image{
+        &:hover{
+          filter: blur(3px) brightness(80%);
+        }
+      }
+      /*'Read More' anchor -> hover effect, visible on hovering parent*/
+      .details{
+        position: absolute;
+        bottom: 5%;
+        left: 10px;
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        color: rgba(white, 0.9);
+        text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
+        letter-spacing: 0.4px;
+        cursor: pointer;
+        visibility: hidden;
+      }
+      .details:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background: #999;
+        visibility: hidden;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: .25s linear;
+      }
+      .details:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+      .details.show{
+        visibility: visible;
+      }
+      /*Slide content*/
+      .content{
+        position: absolute;
+        top:0;
+        left: 0;
+        padding: 10px;
+        h3,
+        h4{
+          font-family: 'Lato', sans-serif;
+          text-transform: uppercase;
+          color: rgba(white, 0.9);
+          text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
+          letter-spacing: 0.4px;
+        }
+        .description{
+          margin: 5px 0;
+          font-weight: bold;
+          letter-spacing: 1px;
+          font-size: 1em;
+        }
+        .description + h4{
+          font-size: 0.9em;
+          font-weight: 900;
+          margin: 5px 0;
+          color: #e4e4e4;
+        }
+        .header{
+          font-family: 'Tinos', serif;
+          font-size: 3em;
+          text-transform: capitalize;
+          font-weight: 300;
+          margin: 25% 0;
+        }
+      }
+      /* Darkening text shadow on bright pictures*/
+      .moto-1 + .content,
+      .boat-2 + .content{
+        h3,
+        h4{
+          text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(black, .7);
+        }
+      }
+      /*Setting images paths*/
+      .boat-1{
+        background-image: url("../images/boat.jpg");
+      }
+      .boat-2{
+        background-image: url("../images/boat-2.jpg");
+      }
+      .moto-1{
+        background-image: url("../images/harley.jpg");
+      }
+      .car-1{
+        background-image: url("../images/corvette.jpg");
+      }
+      .car-2{
+        background-image: url("../images/alfa.jpg");
+      }
+      .car-3{
+        background-image: url("../images/type-e.jpg");
+      }
+    }
   }
+  /*carousel settings*/
   .carousel{
     position: relative;
     height: 100%;
@@ -51,114 +157,47 @@
       transform: translateX(-50%);
       z-index: 1;
     }
-
   }
 }
-
+/*Carousel container - dimensions*/
 .whole_height{
   height: 70vw;
-  .car-1{
-    background-image: url("../images/corvette.jpg");
-  }
-  .car-2{
-    background-image: url("../images/alfa.jpg");
-  }
-  .car-3{
-    background-image: url("../images/type-e.jpg");
-  }
 }
 .half_height{
   height: 34vw;
-  .boat-1{
-    background-image: url("../images/boat.jpg");
+}
+
+@media (max-width: 760px) {
+  .main {
+    /* Section One - opening sentence*/
+    .letter_box {
+      padding: 30vh 0;
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+    /*General settings & images settings*/
+    .carousel_container {
+      .image {
+      }
+      .slide {
+        /*'Read More' anchor -> hover effect, visible on hovering parent*/
+        .details {
+          visibility: visible;
+        }
+        .details:active:before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+    }
   }
-  .boat-2{
-    background-image: url("../images/boat-2.jpg");
+  /*Carousel container - dimensions*/
+  .whole_height{
+    height: 80vw;
   }
-  .moto-1{
-    background-image: url("../images/harley.jpg");
+  .half_height{
+    height: 80vw;
   }
 }
 
-.slide{
-  position: relative;
-  height: 100%;
-  .image{
-    &:hover{
-      filter: blur(3px) brightness(80%);
-    }
-  }
-  .details{
-    position: absolute;
-    bottom: 5%;
-    left: 10px;
-    font-family: 'Lato', sans-serif;
-    text-transform: uppercase;
-    color: rgba(white, 0.9);
-    text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
-    letter-spacing: 0.4px;
-    cursor: pointer;
-    visibility: hidden;
-  }
-  .details:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background: #999;
-    visibility: hidden;
-    border-radius: 5px;
-    transform: scaleX(0);
-    transition: .25s linear;
-  }
-  .details:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-  .details.show{
-    visibility: visible;
-  }
-
-  .content{
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px;
-    h3,
-    h4{
-      font-family: 'Lato', sans-serif;
-      text-transform: uppercase;
-      color: rgba(white, 0.9);
-      text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
-      letter-spacing: 0.4px;
-    }
-    .description{
-      margin: 5px 0;
-      font-weight: bold;
-      letter-spacing: 1px;
-      font-size: 1em;
-    }
-    .description + h4{
-      font-size: 0.9em;
-      font-weight: 900;
-      margin: 5px 0;
-      color: #e4e4e4;
-    }
-    .header{
-      font-family: 'Tinos', serif;
-      font-size: 3em;
-      text-transform: capitalize;
-      font-weight: 300;
-      margin: 25% 0;
-    }
-  }
-  .moto-1 + .content,
-  .boat-2 + .content{
-    h3,
-    h4{
-      text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(black, .7);
-    }
-  }
-}
