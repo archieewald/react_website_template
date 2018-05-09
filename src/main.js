@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from './carousel.js';
-import CarouselItem from './carousel_item.js';
+import Footer from "./footer.js";
 
 
 export default class Main extends React.Component{
@@ -104,6 +104,7 @@ export default class Main extends React.Component{
                         </div>
                     </section>
                 </div>
+                <Footer/>
             </div>
         )
     }

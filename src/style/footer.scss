@@ -1,0 +1,62 @@
+.footer{
+  background: rgba(black, 0.8);
+  color: #999;
+  .row{
+    .rights{
+      height: 100%;
+      h4{
+        text-align: left;
+        font-size: 0.8em;
+        font-weight: 300;
+      }
+    }
+    .departments{
+      ul{
+        list-style: none;
+        li{
+          margin: 10px 0;
+          a{
+            display: block;
+            text-decoration: none;
+            color: #999;
+            font-weight: bold;
+            font-size: 0.9em;
+            &:hover{
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .social{
+      padding: auto;
+      ul{
+        list-style: none;
+        li{
+          display: inline-block;
+          margin: 20px 30px;
+          .icon{
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            &:hover{
+              opacity: 0.7;
+            }
+          }
+          .facebook{
+            background-image: url("../icons/facebook.png");
+          }
+          .twitter{
+            background-image: url("../icons/twitter.png");
+          }
+          .instagram{
+            background-image: url("../icons/instagram.png");
+          }
+        }
+      }
+    }
+  }
+
+}
