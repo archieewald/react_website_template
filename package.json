@@ -1,4 +1,5 @@
-{ "homepage": "https://archieewald.github.io/react_website_template/",
+{
+  "homepage": "https://archieewald.github.io/react_website_template/",
   "name": "webpage",
   "version": "0.1.0",
   "private": true,
@@ -100,6 +101,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1"
   }
