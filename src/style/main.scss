@@ -26,10 +26,21 @@
   .carousel_container{
     width: 95%;
     margin: auto;
+    .image{
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      filter: sepia(0.5) brightness(70%);
+    }
+    .blurred{
+      filter: blur(3px) brightness(80%);
+    }
   }
   .carousel{
     position: relative;
     height: 100%;
+    box-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(#999,.6);
     .swipe_wrapper{
       height: 100%;
     }
@@ -40,10 +51,9 @@
       transform: translateX(-50%);
       z-index: 1;
     }
+
   }
-
 }
-
 
 .whole_height{
   height: 70vw;
@@ -56,15 +66,6 @@
   .car-3{
     background-image: url("../images/type-e.jpg");
   }
-  .car-1,
-  .car-2,
-  .car-3{
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: sepia(0.5);
-  }
 }
 .half_height{
   height: 34vw;
@@ -74,20 +75,90 @@
   .boat-2{
     background-image: url("../images/boat-2.jpg");
   }
-  .boat-1,
-  .boat-2{
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: sepia(0.5);
-  }
   .moto-1{
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    filter: sepia(0.5);
     background-image: url("../images/harley.jpg");
+  }
+}
+
+.slide{
+  position: relative;
+  height: 100%;
+  .image{
+    &:hover{
+      filter: blur(3px) brightness(80%);
+    }
+  }
+  .details{
+    position: absolute;
+    bottom: 5%;
+    left: 10px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: rgba(white, 0.9);
+    text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    visibility: hidden;
+  }
+  .details:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: #999;
+    visibility: hidden;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .25s linear;
+  }
+  .details:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  .details.show{
+    visibility: visible;
+  }
+
+  .content{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px;
+    h3,
+    h4{
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      color: rgba(white, 0.9);
+      text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(255,255, 255, .6);
+      letter-spacing: 0.4px;
+    }
+    .description{
+      margin: 5px 0;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 1em;
+    }
+    .description + h4{
+      font-size: 0.9em;
+      font-weight: 900;
+      margin: 5px 0;
+      color: #e4e4e4;
+    }
+    .header{
+      font-family: 'Tinos', serif;
+      font-size: 3em;
+      text-transform: capitalize;
+      font-weight: 300;
+      margin: 25% 0;
+    }
+  }
+  .moto-1 + .content,
+  .boat-2 + .content{
+    h3,
+    h4{
+      text-shadow: 0.0825rem 0.0825rem 0.9375rem rgba(black, .7);
+    }
   }
 }
